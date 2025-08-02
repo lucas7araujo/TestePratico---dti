@@ -1,0 +1,17 @@
+.cabecalho{
+    display: flex;
+    padding: 1.3rem;
+    background-color: cornflowerblue;
+    color: white;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecalho_atalhos{
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
