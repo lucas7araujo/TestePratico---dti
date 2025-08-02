@@ -1,12 +1,13 @@
 const alunos = [
     {
         "nome_aluno": "Lucas",
-        "aluno_nota1": "6",
-        "aluno_nota2": "6",
-        "aluno_nota3": "7",
-        "aluno_nota4": "8",
-        "aluno_nota5": "9",
-        "aluno_frequencia": "10"
+        "aluno_nota1": "10",
+        "aluno_nota2": "10",
+        "aluno_nota3": "10",
+        "aluno_nota4": "10",
+        "aluno_nota5": "10",
+        "aluno_frequencia": "100",
+        "media_notas": 10
     }
 ]
 

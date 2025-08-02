@@ -9,6 +9,15 @@ formulario_aluno.addEventListener('submit', evento => {
     const formAlunos = new FormData(formulario_aluno);
     const alunos = Object.fromEntries(formAlunos);
 
+    const soma =
+        Number(alunos.aluno_nota1) +
+        Number(alunos.aluno_nota2) +
+        Number(alunos.aluno_nota3) +
+        Number(alunos.aluno_nota4) +
+        Number(alunos.aluno_nota5);
+
+    alunos.media_notas = soma / 5;
+
     fetch(api, {
         method: 'POST',
         headers: {
