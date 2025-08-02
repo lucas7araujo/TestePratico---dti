@@ -1,4 +1,5 @@
 const alunosRepository = require("../repositories/alunosRepository");
+const alunosMediaRepository = require("../repositories/alunosMediaRepository");
 
 function getAlunos(req, res) {
     const alunos = alunosRepository.retornaAlunos();
@@ -11,7 +12,13 @@ function postAluno(req, res) {
     res.status(201).json(novoAluno);
 }
 
+function getMedias(req, res){
+    const mediaNotas = alunosMediaRepository.retornaMedias();
+    res.json(mediaNotas);
+}
+
 module.exports = {
     getAlunos,
-    postAluno
+    postAluno,
+    getMedias
 }
