@@ -1,5 +1,5 @@
 const api = 'http://localhost:3000/alunos';
-const apiMedias = 'http://localhost:3000/alunos';
+const apiMedias = 'http://localhost:3000/medias';
 
 const formulario_aluno = document.getElementById('formulario_aluno');
 
@@ -35,10 +35,10 @@ async function carregaAlunos() {
             card.classList.add('card_aluno');
 
             card.innerHTML = `
-        
-        <p>Nome: ${aluno.nome_aluno}<p>
-        
-        `
+            
+            <p>Nome: ${aluno.nome_aluno}<p>
+            
+            `
             listaDeAlunos.appendChild(card);
         });
     }
@@ -47,11 +47,31 @@ async function carregaAlunos() {
 
 carregaAlunos();
 
+const listaDeMedias = document.getElementById('lista_medias');
+
 async function carregaMedias() {
+
     const medias = await fetch(apiMedias);
     if (medias.status === 200) {
         const mediaNotas = await medias.json();
         console.log(mediaNotas);
+
+        listaDeMedias.innerHTML = '';
+
+        mediaNotas.forEach(media => {
+
+            const card = document.createElement('div');
+            card.classList.add('card_aluno');
+
+            card.innerHTML = `
+            
+            <p>${media.nota}<p>
+            <p>${media.media}<p>
+            
+            `
+            listaDeMedias.appendChild(card);
+
+        });
     }
 }
 
