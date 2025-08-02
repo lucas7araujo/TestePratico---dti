@@ -45,3 +45,11 @@ async function carregaAlunos() {
 }
 
 carregaAlunos();
+
+async function carregaMedias() {
+    const resposta = await fetch(API);
+    if (resposta.status === 200) {
+        const mediaNotas = await resposta.json();
+        console.log(mediaNotas);
+    }
+}
