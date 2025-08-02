@@ -14,23 +14,23 @@ alunos.forEach(aluno => {
 
 const mediaNotas = [
     {
-        nota: "nota1",
+        nota: "Média Nota 1:",
         media: somaNota1 / total
     },
     {
-        nota: "nota2",
+        nota: "Média Nota 2:",
         media: somaNota2 / total
     },
     {
-        nota: "nota3",
+        nota: "Média Nota 3:",
         media: somaNota3 / total
     },
     {
-        nota: "nota4",
+        nota: "Média Nota 4:",
         media: somaNota4 / total
     },
     {
-        nota: "nota5",
+        nota: "Média Nota 5:",
         media: somaNota5 / total
     }
 ];
