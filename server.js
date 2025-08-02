@@ -10,8 +10,6 @@ app.use(express.json());
 app.use(alunosRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 app.listen(PORT, () => {
     console.log(`Servidor da Gestão de alunos rodando em localhost:${PORT}`);
 });

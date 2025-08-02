@@ -1,20 +1,20 @@
 const alunos = [
     {
-        "nome" : "Lucas",
-        "nota1" : 10,
-        "nota2" : 10,
-        "nota3" : 10,
-        "nota3" : 10,
-        "nota5" : 10,
-        "frequencia" : 90,
+        "nome_aluno": "Lucas",
+        "aluno_nota1": "6",
+        "aluno_nota2": "6",
+        "aluno_nota3": "7",
+        "aluno_nota4": "8",
+        "aluno_nota5": "9",
+        "aluno_frequencia": "10"
     }
 ]
 
-function retornaAlunos(){
+function retornaAlunos() {
     return alunos;
 }
 
-function adicionaAluno(novoAluno){
+function adicionaAluno(novoAluno) {
     alunos.push(novoAluno);
     return novoAluno;
 }
