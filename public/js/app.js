@@ -64,19 +64,22 @@ async function carregaAlunos() {
         const infrequentes = await alunosInfrequentes.json();
         listaDeAlunosInfrequentes.innerHTML = '';
 
-        infrequentes.forEach(infrequente => {
+        if (infrequentes.length === 0) {
+            listaDeAlunosInfrequentes.innerHTML = '(Linha Vazia)';
+        } else {
+            infrequentes.forEach(infrequente => {
+                const card = document.createElement('div');
+                card.classList.add('card_aluno');
 
-            const card = document.createElement('div');
-            card.classList.add('card_aluno');
-
-            card.innerHTML = `
-            
+                card.innerHTML = `
             <p>Nome: ${infrequente.nome_aluno}</p>
             <p>Frequência: ${infrequente.aluno_frequencia}%</p>
-            
-            `
-            listaDeAlunosInfrequentes.appendChild(card);
-        });
+        `;
+
+                listaDeAlunosInfrequentes.appendChild(card);
+            });
+        }
+
 
     }
 
@@ -85,19 +88,22 @@ async function carregaAlunos() {
         const acimaDaMedia = await alunosAcimaDaMedia.json();
         listaDeAlunosAcimaDaMedia.innerHTML = '';
 
-        acimaDaMedia.forEach(alunoComBoaNota => {
+        if (acimaDaMedia.length === 0) {
+            listaDeAlunosAcimaDaMedia.innerHTML = '(Linha Vazia)';
+        } else {
+            acimaDaMedia.forEach(alunoComBoaNota => {
+                const card = document.createElement('div');
+                card.classList.add('card_aluno');
 
-            const card = document.createElement('div');
-            card.classList.add('card_aluno');
-
-            card.innerHTML = `
-            
+                card.innerHTML = `
             <p>Nome: ${alunoComBoaNota.nome_aluno}</p>
             <p>Média: ${alunoComBoaNota.media_notas}</p>
-            
-            `
-            listaDeAlunosAcimaDaMedia.appendChild(card);
-        })
+        `;
+
+                listaDeAlunosAcimaDaMedia.appendChild(card);
+            });
+        }
+
     }
 
 }
