@@ -14,6 +14,12 @@ function retornaAlunos(){
     return alunos;
 }
 
+function adicionaAluno(novoAluno){
+    alunos.push(novoAluno);
+    return novoAluno;
+}
+
 module.exports = {
-    retornaAlunos
+    retornaAlunos,
+    adicionaAluno
 }
