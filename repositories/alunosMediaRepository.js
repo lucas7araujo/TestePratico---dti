@@ -38,8 +38,6 @@ function retornaMedias() {
     ];
 }
 
-let medias = retornaMedias();
-
 function retornaMediaGeral(medias) {
     let soma = 0;
     for (let i = 0; i < medias.length; i++) {
@@ -48,7 +46,16 @@ function retornaMediaGeral(medias) {
     return soma / medias.length;
 }
 
+function retornaMediaDaTurma(alunos) {
+    let soma = 0;
+    for (let i = 0; i < alunos.length; i++) {
+        soma += alunos[i].media_notas;
+    }
+    return soma / alunos.length;
+}
+
 module.exports = {
     retornaMedias,
-    retornaMediaGeral
+    retornaMediaGeral,
+    retornaMediaDaTurma
 };

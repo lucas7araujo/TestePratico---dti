@@ -1,6 +1,7 @@
 const alunosRepository = require("../repositories/alunosRepository");
 const alunosMediaRepository = require("../repositories/alunosMediaRepository");
 const alunosInfrequentesRepository = require("../repositories/infrequentesRepository");
+const alunosAcimaDaMediaRepository = require("../repositories/alunosAcimaDaMediaRepository");
 
 function getAlunos(req, res) {
     const alunos = alunosRepository.retornaAlunos();
@@ -24,9 +25,14 @@ function getInfrequentes(req, res) {
 }
 
 function getMediaGeral(req, res) {
-    const medias = alunosMediaRepository.retornaMedias();          
-    const media = alunosMediaRepository.retornaMediaGeral(medias); 
+    const medias = alunosMediaRepository.retornaMedias();
+    const media = alunosMediaRepository.retornaMediaGeral(medias);
     res.json(media);
+}
+
+function getAlunosAcimaDaMedia(req, res) {
+    const alunosAcimaDaMedia = alunosAcimaDaMediaRepository.retornaAlunosAcimaDaMedia();
+    res.json(alunosAcimaDaMedia);
 }
 
 
@@ -35,5 +41,6 @@ module.exports = {
     postAluno,
     getMedias,
     getInfrequentes,
-    getMediaGeral
+    getMediaGeral,
+    getAlunosAcimaDaMedia
 }

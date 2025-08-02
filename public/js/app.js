@@ -1,5 +1,8 @@
 const api = 'http://localhost:3000/alunos';
 const apiMedias = 'http://localhost:3000/medias';
+const apiMediaGeral = 'http://localhost:3000/medias/mediageral';
+const apiAlunosInfrequentes = 'http://localhost:3000/infrequentes';
+const apiAlunosAcimaDaMedia = 'http://localhost:3000/medias/mediageral';
 
 const formulario_aluno = document.getElementById('formulario_aluno');
 
@@ -29,6 +32,7 @@ formulario_aluno.addEventListener('submit', evento => {
 });
 
 const listaDeAlunos = document.getElementById('lista_alunos');
+const listaDeAlunosInfrequentes = document.getElementById('lista_infrequentes');
 
 async function carregaAlunos() {
 
@@ -45,11 +49,32 @@ async function carregaAlunos() {
 
             card.innerHTML = `
             
-            <p>Nome: ${aluno.nome_aluno}<p>
+            <p>Nome: ${aluno.nome_aluno}</p>
             
             `
             listaDeAlunos.appendChild(card);
         });
+    }
+
+    const alunosInfrequentes = await fetch(apiAlunosInfrequentes);
+    if (alunosInfrequentes.status === 200) {
+        const infrequentes = await alunosInfrequentes.json();
+        listaDeAlunosInfrequentes.innerHTML = '';
+
+        infrequentes.forEach(infrequente => {
+
+            const card = document.createElement('div');
+            card.classList.add('card_aluno');
+
+            card.innerHTML = `
+            
+            <p>Nome: ${infrequente.nome_aluno}</p>
+            <p>Frequência: ${infrequente.aluno_frequencia}%</p>
+            
+            `
+            listaDeAlunosInfrequentes.appendChild(card);
+        });
+
     }
 
 }
@@ -57,6 +82,7 @@ async function carregaAlunos() {
 carregaAlunos();
 
 const listaDeMedias = document.getElementById('lista_medias');
+const mediaDaTurma = document.getElementById('media_turma')
 
 async function carregaMedias() {
 
@@ -74,14 +100,25 @@ async function carregaMedias() {
 
             card.innerHTML = `
             
-            <p>${media.nota}<p>
-            <p>${media.media}<p>
+            <p>${media.nota}</p>
+            <p>${media.media}</p>
             
             `
             listaDeMedias.appendChild(card);
 
         });
     }
+
+    mediaDaTurma.innerHTML = '';
+
+    fetch(apiMediaGeral)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("media_turma").innerHTML = `
+            <p>${data}</p>
+            `;
+        });
+
 }
 
 carregaMedias();
