@@ -5,7 +5,7 @@ const alunosAcimaDaMediaRepository = require("../repositories/alunosAcimaDaMedia
 
 function getAlunos(req, res) {
     const alunos = alunosRepository.retornaAlunos();
-    res.json(alunos);
+    res.status(200).json(alunos);
 }
 
 function postAluno(req, res) {
@@ -16,23 +16,23 @@ function postAluno(req, res) {
 
 function getMedias(req, res) {
     const mediaNotas = alunosMediaRepository.retornaMedias();
-    res.json(mediaNotas);
+    res.status(200).json(mediaNotas);
 }
 
 function getInfrequentes(req, res) {
     const infrequentes = alunosInfrequentesRepository.retornAlunosInfrequentes();
-    res.json(infrequentes);
+    res.status(200).json(infrequentes);
 }
 
 function getMediaGeral(req, res) {
     const medias = alunosMediaRepository.retornaMedias();
     const media = alunosMediaRepository.retornaMediaGeral(medias);
-    res.json(media);
+    res.status(200).json(media);
 }
 
 function getAlunosAcimaDaMedia(req, res) {
     const alunosAcimaDaMedia = alunosAcimaDaMediaRepository.retornaAlunosAcimaDaMedia();
-    res.json(alunosAcimaDaMedia);
+    res.status(200).json(alunosAcimaDaMedia);
 }
 
 
