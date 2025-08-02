@@ -2,7 +2,7 @@ const api = 'http://localhost:3000/alunos';
 const apiMedias = 'http://localhost:3000/medias';
 const apiMediaGeral = 'http://localhost:3000/medias/mediageral';
 const apiAlunosInfrequentes = 'http://localhost:3000/infrequentes';
-const apiAlunosAcimaDaMedia = 'http://localhost:3000/medias/mediageral';
+const apiAlunosAcimaDaMedia = 'http://localhost:3000/alunos/acimadamedia';
 
 const formulario_aluno = document.getElementById('formulario_aluno');
 
@@ -33,6 +33,7 @@ formulario_aluno.addEventListener('submit', evento => {
 
 const listaDeAlunos = document.getElementById('lista_alunos');
 const listaDeAlunosInfrequentes = document.getElementById('lista_infrequentes');
+const listaDeAlunosAcimaDaMedia = document.getElementById('alunos_acimaDaMedia');
 
 async function carregaAlunos() {
 
@@ -75,6 +76,26 @@ async function carregaAlunos() {
             listaDeAlunosInfrequentes.appendChild(card);
         });
 
+    }
+
+    const alunosAcimaDaMedia = await fetch(apiAlunosAcimaDaMedia);
+    if (alunosAcimaDaMedia.status === 200) {
+        const acimaDaMedia = await alunosAcimaDaMedia.json();
+        listaDeAlunosAcimaDaMedia.innerHTML = '';
+
+        acimaDaMedia.forEach(alunoComBoaNota => {
+
+            const card = document.createElement('div');
+            card.classList.add('card_aluno');
+
+            card.innerHTML = `
+            
+            <p>Nome: ${alunoComBoaNota.nome_aluno}</p>
+            <p>Média: ${alunoComBoaNota.media_notas}</p>
+            
+            `
+            listaDeAlunosAcimaDaMedia.appendChild(card);
+        })
     }
 
 }
