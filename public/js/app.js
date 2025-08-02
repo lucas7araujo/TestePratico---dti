@@ -85,7 +85,7 @@ async function carregaAlunos() {
             listaDeAlunosInfrequentes.innerHTML = '';
 
             if (infrequentes.length === 0) {
-                listaDeAlunosInfrequentes.innerHTML = '(Linha Vazia)';
+                listaDeAlunosInfrequentes.innerHTML = '';
             } else {
                 infrequentes.forEach(infrequente => {
                     const card = document.createElement('div');
@@ -113,7 +113,7 @@ async function carregaAlunos() {
             listaDeAlunosAcimaDaMedia.innerHTML = '';
 
             if (acimaDaMedia.length === 0) {
-                listaDeAlunosAcimaDaMedia.innerHTML = '(Linha Vazia)';
+                listaDeAlunosAcimaDaMedia.innerHTML = '';
             } else {
                 acimaDaMedia.forEach(alunoComBoaNota => {
                     const card = document.createElement('div');
