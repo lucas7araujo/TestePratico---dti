@@ -1,4 +1,5 @@
-const API = 'http://localhost:3000/alunos';
+const api = 'http://localhost:3000/alunos';
+const apiMedias = 'http://localhost:3000/alunos';
 
 const formulario_aluno = document.getElementById('formulario_aluno');
 
@@ -8,7 +9,7 @@ formulario_aluno.addEventListener('submit', evento => {
     const formAlunos = new FormData(formulario_aluno);
     const alunos = Object.fromEntries(formAlunos);
 
-    fetch(API, {
+    fetch(api, {
         method: 'POST',
         headers: {
             'Content-type': "application/json"
@@ -22,7 +23,7 @@ const listaDeAlunos = document.getElementById('lista_alunos');
 
 async function carregaAlunos() {
 
-    const resposta = await fetch(API);
+    const resposta = await fetch(api);
     if (resposta.status === 200) {
         const alunos = await resposta.json();
         console.log(alunos);
@@ -47,9 +48,11 @@ async function carregaAlunos() {
 carregaAlunos();
 
 async function carregaMedias() {
-    const resposta = await fetch(API);
-    if (resposta.status === 200) {
-        const mediaNotas = await resposta.json();
+    const medias = await fetch(apiMedias);
+    if (medias.status === 200) {
+        const mediaNotas = await medias.json();
         console.log(mediaNotas);
     }
 }
+
+carregaMedias();
