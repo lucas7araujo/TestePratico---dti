@@ -1,4 +1,4 @@
-const alunos = require('./alunosRepository');
+const alunos = require("./alunosRepository").retornaAlunos();
 
 const total = alunos.length;
 
