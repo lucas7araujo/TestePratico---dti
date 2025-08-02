@@ -49,8 +49,10 @@ async function carregaAlunos() {
             card.classList.add('card_aluno');
 
             card.innerHTML = `
-            
-            <p>Nome: ${aluno.nome_aluno}</p>
+
+            <h2>${aluno.nome_aluno}</h2>
+            <p>Média do Aluno: ${aluno.media_notas}</p>
+            <p>Frequência do Aluno: ${aluno.aluno_frequencia}%</p>
             
             `
             listaDeAlunos.appendChild(card);
@@ -120,8 +122,7 @@ async function carregaMedias() {
             card.classList.add('card_aluno');
 
             card.innerHTML = `
-            
-            <p>${media.nota}</p>
+            <h2>${media.nota}</h2>
             <p>${media.media}</p>
             
             `
@@ -136,7 +137,7 @@ async function carregaMedias() {
         .then(res => res.json())
         .then(data => {
             document.getElementById("media_turma").innerHTML = `
-            <p>${data}</p>
+            <h1>Média Geral da Turma: ${data}</h1>
             `;
         });
 

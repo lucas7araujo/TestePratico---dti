@@ -1,4 +1,4 @@
-.cabecalho{
+.cabecalho {
     display: flex;
     padding: 1.3rem;
     background-color: #0056b3;
@@ -8,7 +8,14 @@
     justify-content: space-between;
 }
 
-.cabecalho_atalhos{
+html {
+    font-family: sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+.cabecalho_atalhos {
     display: flex;
     gap: 1rem;
     list-style: none;
@@ -63,4 +70,16 @@
 
 #formulario_aluno button:hover {
     background-color: #0056b3;
+}
+
+.card_aluno {
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
