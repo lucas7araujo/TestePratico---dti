@@ -38,6 +38,17 @@ function retornaMedias() {
     ];
 }
 
+let medias = retornaMedias();
+
+function retornaMediaGeral(medias) {
+    let soma = 0;
+    for (let i = 0; i < medias.length; i++) {
+        soma += medias[i].media;
+    }
+    return soma / medias.length;
+}
+
 module.exports = {
-    retornaMedias
+    retornaMedias,
+    retornaMediaGeral
 };

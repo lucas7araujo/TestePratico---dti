@@ -5,6 +5,7 @@ const alunosController = require('../controllers/alunosController');
 router.get('/alunos', alunosController.getAlunos);
 router.get('/medias', alunosController.getMedias);
 router.get('/infrequentes', alunosController.getInfrequentes);
+router.get('/medias/mediageral', alunosController.getMediaGeral);
 
 router.post('/alunos', alunosController.postAluno);
 

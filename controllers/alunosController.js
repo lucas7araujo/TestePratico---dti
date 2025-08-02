@@ -13,14 +13,20 @@ function postAluno(req, res) {
     res.status(201).json(novoAluno);
 }
 
-function getMedias(req, res){
+function getMedias(req, res) {
     const mediaNotas = alunosMediaRepository.retornaMedias();
     res.json(mediaNotas);
 }
 
-function getInfrequentes(req, res){
+function getInfrequentes(req, res) {
     const infrequentes = alunosInfrequentesRepository.retornAlunosInfrequentes();
     res.json(infrequentes);
+}
+
+function getMediaGeral(req, res) {
+    const medias = alunosMediaRepository.retornaMedias();          
+    const media = alunosMediaRepository.retornaMediaGeral(medias); 
+    res.json(media);
 }
 
 
@@ -28,5 +34,6 @@ module.exports = {
     getAlunos,
     postAluno,
     getMedias,
-    getInfrequentes
+    getInfrequentes,
+    getMediaGeral
 }
