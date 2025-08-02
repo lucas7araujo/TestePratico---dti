@@ -1,4 +1,4 @@
-const Alunos = [
+const alunos = [
     {
         "nome" : "Lucas",
         "nota1" : 10,
@@ -9,3 +9,11 @@ const Alunos = [
         "frequencia" : 90,
     }
 ]
+
+function retornaAlunos(){
+    return alunos;
+}
+
+module.exports = {
+    retornaAlunos
+}
