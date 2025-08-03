@@ -14,9 +14,24 @@ Este projeto foi desenvolvido como parte do processo seletivo para a vaga de est
 1. Clone o repositório:
 ```bash
 git clone https://github.com/lucas7araujo/TestePratico---dti.git
-````
+```
+2. Vá até a pasta do projeto: 
+```bash
+cd .\TestePratico---dti\
+```
 
-2. 
+3. Instale as dependências: 
+```bash
+npm init -y
+```
+4. Instale o express: 
+```bash
+npm install express
+```
+4. Inicie o Servidor: 
+```bash
+npm start
+```
 
 ---
 
