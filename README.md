@@ -67,4 +67,13 @@ Interface simples para visualização de todos esses dados. <br>
 Alunos com média acima da média da turma; <br>
 Alunos com frequência abaixo de 75%.
 
+---
+
+## 💻 Aplicação em Funcionamento
+
+https://github.com/user-attachments/assets/75ad1fdf-0d1e-4297-bf39-b3f9809c3c56
+
+
+
+
 
