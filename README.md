@@ -56,11 +56,11 @@ npm start
 
 ## 💻 Premissas Assumidas
 
-As notas inseridas devem estar entre 0 e 10;
-A frequência é expressa em percentual (0 a 100%);
-Cada aluno possui exatamente 5 disciplinas;
-Os dados são armazenados em memória (sem persistência após reinício do servidor);
-As médias são sempre calculadas com base nos dados atualmente inseridos.
+- As notas inseridas devem estar entre 0 e 10;
+- A frequência é expressa em percentual (0 a 100%);
+- Cada aluno possui exatamente 5 disciplinas;
+- Os dados são armazenados em memória (sem persistência após reinício do servidor);
+- As médias são sempre calculadas com base nos dados atualmente inseridos.
 
 ## ⚙️ Decisões de projeto
 
@@ -91,7 +91,11 @@ Os dados são processados em tempo real a cada requisição — sem banco de dad
 
 ## 💻 Aplicação em Funcionamento
 
-https://github.com/user-attachments/assets/75ad1fdf-0d1e-4297-bf39-b3f9809c3c56
+https://github.com/user-attachments/assets/6bd88138-88a2-4cc4-bdbb-eb974d5f6ac5
+
+
+
+
 
 
 
